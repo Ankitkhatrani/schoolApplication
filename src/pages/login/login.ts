@@ -26,7 +26,28 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    
+    let postData = new FormData();
+
+    postData.append('title',"Elango");
+    postData.append('body',"Elango");
+    postData.append('userId','102');
+    // this.http.get('https://jsonplaceholder.typicode.com/todos',{ headers : headers})
+    //   .subscribe(data => {
+    //     console.log(data);
+    //    }, error => {
+    //     console.log(error);
+    //   });
+    this.http.post('https://jsonplaceholder.typicode.com/posts',postData,{headers:headers})
+        .subscribe(
+            data => {
+                console.log("POST Request is successful ", data);
+            },
+            error => {
+                console.log("Error", error);
+            }
+        );   
+
+    // this.http.post('https://restserv.000webhostapp.com/insert.php',postData,{headers:headers})  
   }
 	login()
 	{
