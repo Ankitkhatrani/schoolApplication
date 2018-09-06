@@ -48,6 +48,7 @@ export class LoginPage {
         );   
 
     // this.http.post('https://restserv.000webhostapp.com/insert.php',postData,{headers:headers})  
+    // https://github.com/typicode/jsonplaceholder#how-to
   }
 	login()
 	{
